@@ -2,4 +2,22 @@ https://gridbyexample.com/examples/
 
 https://react-hhtp28.web.app/
 
-https://codesandbox.io/s/angry-lalande-jvpfxx?file=/src/App.js
+let flag = false;
+var longestCommonPrefix = function(strs) {
+    let outputSting = "";
+    for(let  i = 0; i < strs[0].length; i++){
+        let current = strs[0][i];
+        for(let  j = 0; j < strs.length; j++){
+            if( strs[j][i] !== current ){
+                flag = true;
+                break;
+            }
+            if(j === strs.length - 1){
+                outputSting += current;
+            }
+        }
+        if(flag)
+            break;
+    }
+    return outputSting;
+};
