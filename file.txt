@@ -21,3 +21,36 @@ var longestCommonPrefix = function(strs) {
     }
     return outputSting;
 };
+
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    let flagfirstroundBraces = 0;
+    let flagsecondroundBraces = 0;
+    let flagfirstcurlyBraces = 0;
+    let flagsecondcurlyBraces = 0;
+    let flagfirstsquareBraces = 0;
+    let flagsecondsquareBraces = 0;
+    
+    for(let i = 0; i < s.length; i++){
+        if(s[i] == "(")
+            flagfirstroundBraces + 1;
+        else if(s[i] == ")")
+            flagsecondroundBraces + 1;
+        else if(s[i] == "{")
+            flagfirstcurlyBraces + 1;
+        else if(s[i] == "}")
+            flagsecondcurlyBraces + 1;
+        else if(s[i] == "[")
+            flagfirstsquareBraces + 1;
+        else if(s[i] == "]")
+            flagsecondsquareBraces + 1;
+    }
+    if((flagfirstroundBraces == flagsecondroundBraces) && (flagfirstcurlyBraces ==              flagsecondcurlyBraces) && (flagfirstsquareBraces == flagsecondsquareBraces)){
+        return true;
+    }
+    return false;
+};
