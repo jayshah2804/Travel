@@ -2,6 +2,30 @@ https://gridbyexample.com/examples/
 
 https://react-hhtp28.web.app/
 
+var minSetSize = function(arr) {
+    let length = arr.length;
+    let obj = {};
+    for(let i = 0; i < length; i++){
+        obj[arr[i]] = obj[arr[i]] + 1 || 1; 
+    }
+    let arrObj = Object.values(obj);
+    arrObj.sort((a,b) => b-a);
+    let requireLength = length/2;
+    
+};
+
+let itemsRemoved = 0;
+let ans = 0;
+for(let i = 0; i < arr.length; i++){
+    itemsRemoved += arr[i];
+    ans++;
+    if(itemsRemoved >= 9/2)
+        break;
+}
+
+
+
+
 let flag = false;
 var longestCommonPrefix = function(strs) {
     let outputSting = "";
