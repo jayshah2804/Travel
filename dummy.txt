@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.css';
-import Home from './Components/Pages/Home';
+// import Home from './Components/Pages/Home';
 import { useState } from 'react';
 
 let myVar,myId;
@@ -10,20 +10,23 @@ function App() {
     myVar = e.target.value;
   }
   const clickButtonHandler = () => {
-    if()
-    if(dropDownValue != undefined)
+    if(myVar == dropDownValue)
     {
       let myP = document.createElement(`p`);
       myP.innerHTML = dropDownValue;
+      document.getElementById(myId).appendChild(myP);
     }
     else
     {
+      let myP = document.createElement(`p`);
+      myP.innerHTML = myVar;
       let div = document.createElement(`div`);
       myId = Math.random().toString();
       div.id = myId;
       document.getElementById("Wanda").appendChild(div); 
+      document.getElementById(myId).appendChild(myP);
     }
-    setDropDownValue((prev) => myVar);
+    setDropDownValue(myVar);
   }
   return (
     <div style={{ marginLeft: "33%" }}>
@@ -35,7 +38,6 @@ function App() {
       <button onClick={clickButtonHandler}>Submit</button>
       <div style={{display: "flex"}} id="Wanda">
       </div>
-      {dropDownValue}
     </div>
   );
 }
