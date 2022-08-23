@@ -1,0 +1,43 @@
+import logo from './logo.svg';
+// import './App.css';
+import Home from './Components/Pages/Home';
+import { useState } from 'react';
+
+let myVar,myId;
+function App() {
+  const [dropDownValue, setDropDownValue] = useState("");
+  const chnageHandler = (e) => {
+    myVar = e.target.value;
+  }
+  const clickButtonHandler = () => {
+    if()
+    if(dropDownValue != undefined)
+    {
+      let myP = document.createElement(`p`);
+      myP.innerHTML = dropDownValue;
+    }
+    else
+    {
+      let div = document.createElement(`div`);
+      myId = Math.random().toString();
+      div.id = myId;
+      document.getElementById("Wanda").appendChild(div); 
+    }
+    setDropDownValue((prev) => myVar);
+  }
+  return (
+    <div style={{ marginLeft: "33%" }}>
+      <select onChange={chnageHandler}>
+      <option value="--select--">--select--</option>
+        <option value="H">H</option>
+        <option value="T">T</option>
+      </select>
+      <button onClick={clickButtonHandler}>Submit</button>
+      <div style={{display: "flex"}} id="Wanda">
+      </div>
+      {dropDownValue}
+    </div>
+  );
+}
+
+export default App;
